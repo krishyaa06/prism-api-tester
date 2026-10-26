@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prism API Tester · Prism Protocol</title>
+  <meta name="description" content="Lightweight browser API client with variables, auth, history, cURL import and fetch/Python/cURL code generation." />
+  <meta name="theme-color" content="#07080f" />
+  <meta property="og:title" content="Prism API Tester · Prism Protocol" />
+  <meta property="og:description" content="Lightweight browser API client with variables, auth, history, cURL import and fetch/Python/cURL code generation." />
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/prism.css" />
+  <link rel="stylesheet" href="css/app.css" />
+  <style>:root{--accent:#6C63FF;--accent-2:#00D2FF}</style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="./"><span class="mark">◇</span><b>PRISM</b><span>API Tester</span></a>
+    <nav>
+      <a class="btn small" href="https://github.com/krishyaa06/prism-api-tester" target="_blank" rel="noreferrer">★ GitHub</a>
+    </nav>
+  </header>
+  <main class="wrap">
+    <section class="hero">
+      <p class="eyebrow">🛰️ Dev Tools</p>
+      <h1>Test APIs <em>right in your browser.</em></h1>
+      <p class="lead">A lightweight Postman alternative: params, headers, JSON body, auth, variables, history, cURL import and code generation.</p>
+    </section>
+    <section class="card reqbar">
+      <div class="url-row">
+        <select id="method" aria-label="Method"><option>GET</option><option>POST</option><option>PUT</option><option>PATCH</option><option>DELETE</option><option>HEAD</option></select>
+        <input id="url" class="code" spellcheck="false" aria-label="URL" placeholder="https://api.example.com/users or {{baseUrl}}/users" />
+        <button class="btn primary" id="send">Send <kbd>⌘↵</kbd></button>
+      </div>
+    </section>
+    <section class="grid api">
+      <div class="stack">
+        <div class="card">
+          <div class="card-title"><div class="tabs" id="reqTabs"><button class="on" data-v="params">Params</button><button data-v="headers">Headers</button><button data-v="body">Body</button><button data-v="auth">Auth</button><button data-v="vars">Variables</button></div></div>
+          <div data-pane="params"><textarea id="params" class="code kv" spellcheck="false" placeholder="key=value (one per line)"></textarea></div>
+          <div data-pane="headers" hidden><textarea id="headers" class="code kv" spellcheck="false" placeholder="Accept: application/json"></textarea></div>
+          <div data-pane="body" hidden><textarea id="body" class="code kv" spellcheck="false" placeholder='{"name": "Prism"}'></textarea><button class="btn small mt8" id="fmtBody">Format JSON</button></div>
+          <div data-pane="auth" hidden class="stack"><select id="authType"><option value="none">No auth</option><option value="bearer">Bearer token</option><option value="basic">Basic auth</option></select><input id="authToken" class="code" placeholder="token or {{token}}" /><div class="grid g2"><input id="authUser" placeholder="username" /><input id="authPass" type="password" placeholder="password" /></div></div>
+          <div data-pane="vars" hidden><textarea id="vars" class="code kv" spellcheck="false" placeholder="baseUrl=https://api.github.com"></textarea><p class="muted small">Use them anywhere as <code>{{name}}</code>.</p></div>
+        </div>
+        <div class="card">
+          <div class="card-title"><div class="tabs" id="codeTabs"><button class="on" data-v="curl">cURL</button><button data-v="fetch">fetch</button><button data-v="python">Python</button></div><div class="row"><button class="btn small" id="importCurl">Import cURL</button><button class="btn small" id="copyCode">Copy</button></div></div>
+          <pre class="out code-out" id="code"></pre>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="card resp">
+          <div class="card-title"><h2>Response</h2><div class="row"><span class="pill" id="status"></span><span class="pill" id="time"></span><span class="pill" id="size"></span></div></div>
+          <div class="tabs" id="resTabs"><button class="on" data-v="body">Body</button><button data-v="headers">Headers</button></div>
+          <pre class="out res-out" id="res"><span class="muted">Hit Send to make a request. Requests go straight from your browser, so the API must allow CORS.</span></pre>
+        </div>
+        <div class="card"><div class="card-title"><h2>History</h2><button class="btn small ghost" id="clearHist">Clear</button></div><div id="hist" class="hist"></div></div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="foot">
+    <span>◇ Prism API Tester · Part of <a href="https://dc.gg/prismprotocol" target="_blank" rel="noreferrer">Prism Protocol</a></span>
+    <span><a href="https://github.com/krishyaa06/prism-api-tester" target="_blank" rel="noreferrer">Source</a> · MIT License · Runs 100% in your browser</span>
+  </footer>
+  <script src="js/prism.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

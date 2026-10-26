@@ -1,0 +1,30 @@
+{
+  "name": "prism-api-tester",
+  "version": "1.0.0",
+  "description": "Lightweight browser API client with variables, auth, history, cURL import and fetch/Python/cURL code generation.",
+  "scripts": {
+    "test": "node --test",
+    "start": "npx --yes serve ."
+  },
+  "keywords": [
+    "api",
+    "rest-api",
+    "http-client",
+    "postman-alternative",
+    "curl",
+    "api-testing",
+    "developer-tools",
+    "vanilla-js",
+    "prism-protocol"
+  ],
+  "author": "Soumya Bhandare (krishyaa06)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krishyaa06/prism-api-tester.git"
+  },
+  "homepage": "https://krishyaa06.github.io/prism-api-tester/",
+  "engines": {
+    "node": ">=18.17"
+  }
+}

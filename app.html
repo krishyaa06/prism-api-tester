@@ -1,0 +1,31 @@
+    <section class="card reqbar">
+      <div class="url-row">
+        <select id="method" aria-label="Method"><option>GET</option><option>POST</option><option>PUT</option><option>PATCH</option><option>DELETE</option><option>HEAD</option></select>
+        <input id="url" class="code" spellcheck="false" aria-label="URL" placeholder="https://api.example.com/users or {{baseUrl}}/users" />
+        <button class="btn primary" id="send">Send <kbd>⌘↵</kbd></button>
+      </div>
+    </section>
+    <section class="grid api">
+      <div class="stack">
+        <div class="card">
+          <div class="card-title"><div class="tabs" id="reqTabs"><button class="on" data-v="params">Params</button><button data-v="headers">Headers</button><button data-v="body">Body</button><button data-v="auth">Auth</button><button data-v="vars">Variables</button></div></div>
+          <div data-pane="params"><textarea id="params" class="code kv" spellcheck="false" placeholder="key=value (one per line)"></textarea></div>
+          <div data-pane="headers" hidden><textarea id="headers" class="code kv" spellcheck="false" placeholder="Accept: application/json"></textarea></div>
+          <div data-pane="body" hidden><textarea id="body" class="code kv" spellcheck="false" placeholder='{"name": "Prism"}'></textarea><button class="btn small mt8" id="fmtBody">Format JSON</button></div>
+          <div data-pane="auth" hidden class="stack"><select id="authType"><option value="none">No auth</option><option value="bearer">Bearer token</option><option value="basic">Basic auth</option></select><input id="authToken" class="code" placeholder="token or {{token}}" /><div class="grid g2"><input id="authUser" placeholder="username" /><input id="authPass" type="password" placeholder="password" /></div></div>
+          <div data-pane="vars" hidden><textarea id="vars" class="code kv" spellcheck="false" placeholder="baseUrl=https://api.github.com"></textarea><p class="muted small">Use them anywhere as <code>{{name}}</code>.</p></div>
+        </div>
+        <div class="card">
+          <div class="card-title"><div class="tabs" id="codeTabs"><button class="on" data-v="curl">cURL</button><button data-v="fetch">fetch</button><button data-v="python">Python</button></div><div class="row"><button class="btn small" id="importCurl">Import cURL</button><button class="btn small" id="copyCode">Copy</button></div></div>
+          <pre class="out code-out" id="code"></pre>
+        </div>
+      </div>
+      <div class="stack">
+        <div class="card resp">
+          <div class="card-title"><h2>Response</h2><div class="row"><span class="pill" id="status"></span><span class="pill" id="time"></span><span class="pill" id="size"></span></div></div>
+          <div class="tabs" id="resTabs"><button class="on" data-v="body">Body</button><button data-v="headers">Headers</button></div>
+          <pre class="out res-out" id="res"><span class="muted">Hit Send to make a request. Requests go straight from your browser, so the API must allow CORS.</span></pre>
+        </div>
+        <div class="card"><div class="card-title"><h2>History</h2><button class="btn small ghost" id="clearHist">Clear</button></div><div id="hist" class="hist"></div></div>
+      </div>
+    </section>
